@@ -1,0 +1,4 @@
+#exclude the auto generate R resource file
+gen
+#exclude the class and apk file
+bin

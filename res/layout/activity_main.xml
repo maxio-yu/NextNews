@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    
+    tools:context="com.example.nextnews.MainActivity" >
+
+    
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#cc0033"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:text="心闻"
+        android:textSize="25sp" />
+    
+    <Button 
+        android:id="@+id/show_read_status"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_alignRight="@id/main_title"
+        android:background="#cc0033"
+        android:textColor="#ffffff"
+        android:text="s"
+        android:textSize="12sp"/>
+
+    <HorizontalScrollView
+        android:id="@+id/column_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/main_title"
+        android:background="#fff3f3f3"
+        android:scrollbars="none" >
+        
+        <LinearLayout
+            android:id="@+id/column_names"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+        
+    </HorizontalScrollView>
+    
+    <View
+        android:id="@+id/category_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/column_scroll"
+        android:background="#ffdddddd" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewPager"
+        android:background="#fff3f3f3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/category_line" />
+
+    <RelativeLayout 
+        android:id="@+id/all_buttons"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000000"
+        android:orientation="horizontal" >
+        
+        <RadioGroup
+        android:id="@+id/emotion_buttons"
+        
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        
+        android:checkedButton="@+id/all_news_button" >
+        <RadioButton
+            android:id="@id/all_news_button"
+            android:textColor="#ffdddddd"
+            android:text="全部" />
+        <RadioButton
+            android:id="@+id/positive_news_button"
+            android:textColor="#ffdddddd"
+            android:text="正能量" />        
+        <RadioButton
+            android:id="@+id/negative_news_button"
+            android:textColor="#ffdddddd"
+            android:text="负能量" />
+    </RadioGroup> 
+        
+        <Button 
+            android:id="@+id/refresh_button"
+            android:layout_height="match_parent"
+            android:layout_width="70dp"
+            android:layout_alignParentRight="true"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:text="刷新"/>
+        
+    </RelativeLayout>
+    
+            
+    
+</RelativeLayout>
